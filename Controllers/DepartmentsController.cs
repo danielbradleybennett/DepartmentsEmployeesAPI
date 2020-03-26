@@ -105,8 +105,8 @@ namespace MyEmployeeDepartmentAPI.Controllers
                 {
                     cmd.CommandText = @"INSERT INTO Department (DeptName)
                                         OUTPUT INSERTED.Id
-                                        VALUES (@DebtName)";
-                    cmd.Parameters.Add(new SqlParameter("@Name",department.DeptName ));
+                                        VALUES (@DeptName)";
+                    cmd.Parameters.Add(new SqlParameter("@DeptName",department.DeptName ));
                    
 
                     int newId = (int)cmd.ExecuteScalar();
@@ -127,7 +127,7 @@ namespace MyEmployeeDepartmentAPI.Controllers
                     using (SqlCommand cmd = conn.CreateCommand())
                     {
                         cmd.CommandText = @"UPDATE Department
-                                            SET DeptName = @name,
+                                            SET DeptName = @name
                                             WHERE Id = @id";
                         cmd.Parameters.Add(new SqlParameter("@name", department.DeptName));
                         cmd.Parameters.Add(new SqlParameter("@id", id));

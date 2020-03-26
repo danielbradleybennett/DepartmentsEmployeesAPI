@@ -137,8 +137,8 @@ namespace MyEmployeeDepartmentAPI.Controllers
                     {
                         cmd.CommandText = @"UPDATE Employee
                                             SET FirstName = @FirstName,
-                                            SET LastName = @LastName,
-                                            Set DepartmentId = @DepartmentId
+                                                LastName = @LastName,
+                                                DepartmentId = @DepartmentId
                                             WHERE Id = @id";
                         cmd.Parameters.Add(new SqlParameter("@FirstName", employee.FirstName));
                         cmd.Parameters.Add(new SqlParameter("@LastName", employee.LastName));
